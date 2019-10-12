@@ -2,7 +2,6 @@
 	include 'dbcon.php';
 	session_start();
 	if(isset($_POST['vote_button'])){
-		
 		$voter_id = $_SESSION['login-user-id'];
 		$election_users_id = $_POST['vote_button'];
 		echo $election_users_id;
@@ -17,7 +16,7 @@
 
 		if(!$update_election_users || !$insert_votes){
 			die(mysql_error()." Something went wrong");
-		}
+		   }
 		else{
 			header("location: profile.php");
 		}
@@ -30,7 +29,4 @@
 	else{
 		header("location: index.php");
 	}
-
-
-
 ?>
